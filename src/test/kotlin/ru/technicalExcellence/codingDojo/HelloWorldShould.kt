@@ -2,7 +2,6 @@ package ru.technicalExcellence.codingDojo
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.math.pow
 
 class HelloWorldShould {
 
@@ -28,13 +27,22 @@ class HelloWorldShould {
 //        LongArray(n) { i -> a * r.toDouble().pow(i.toDouble()).toLong() }.joinToString(", ")
 
 
+//    fun geometricSequenceElements(a: Int, r: Int, n: Int): String =
+//        sequence {
+//            var e = a
+//            while (true) {
+//                this.yield(e)
+//                e *= r
+//            }
+//        }.take(n).joinToString(separator = ", ")
+
     fun geometricSequenceElements(a: Int, r: Int, n: Int): String =
         sequence {
             var e = a
-            while (true) {
-                this.yield(e)
+            repeat(n) {
+                yield(e)
                 e *= r
             }
-        }.take(n).joinToString(separator = ", ")
+        }.joinToString(", ")
 }
 
